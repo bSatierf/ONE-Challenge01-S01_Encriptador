@@ -6,25 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
     <title>Decodificador de texto</title>
 </head>
 
 <body>
-    <header class="cabecalho"><img src="./assets/image/Vector.svg" alt="Alura"></header>
+    <header class="cabecalho"><img src="./assets/image/logo-alura.svg" alt="Alura"></header>
 
     <main class="container">
 
         <section class="secao">
             <div id="textarea">
                 
-                <textarea name="" id="text" cols="30" rows="10" spellcheck="false">Digite seu texto</textarea>
+                <textarea name="" id="text" class="text" cols="30" rows="10" spellcheck="false">Digite seu texto</textarea>
             </div>
 
 
-            <div class="aviso">
-
-                <span>apenas letras minúsculas e sem acento.</span>
+            <div class="info">
+                <img src="./assets/image/info.svg" alt="Aviso" class="alert">
+                <span class="info-text">apenas letras minúsculas e sem acento.</span>
             </div>
 
             <div class="botao-entrada">
@@ -37,13 +38,15 @@
 
         </section>
 
-        <section>
+        <section class="output">
 
-            <div id="result">
+            <div class="result">
 
-                <h3>Nenhuma mensagem encontrada</h3>
+                <img src="./assets/image/image2.svg" alt="">
 
-                <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+                <h3 class="not-found">Nenhuma mensagem encontrada</h3>
+
+                <p class="insert-message">Digite um texto que você deseja criptografar ou descriptografar.</p>
 
                 <button class="botoes" id="copy">Copiar</button>
 

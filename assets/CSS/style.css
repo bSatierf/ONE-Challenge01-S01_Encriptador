@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
 
 * {
     margin: 0;
@@ -11,17 +11,16 @@
 
 body {
     background-color: #FFFF;
-    font-family: 'Inter', sans-serif; 
-    width: 100vw;
-    height: 100vh;
-    
-    
+    font-family: 'Inter', sans-serif;
+    /* width: 100vw;
+    height: 100vh; */
 }
 
 .cabecalho {
-   /* background-color: #000; */
-   height: 90px;
-   padding: 20px 0 0 20px;
+    /* background-color: #000; */
+    height: 90px;
+    padding: 20px 0 0 20px;
+    margin: 0 0 0 20px;
 
 
 }
@@ -29,7 +28,7 @@ body {
 
 
 .container {
-    background-color: #e5e5e5 ;
+    background-color: #e5e5e5;
     height: 80vh;
     width: 85vw;
     margin: auto;
@@ -37,12 +36,13 @@ body {
     border-radius: 30px;
     display: flex;
     flex-direction: row;
-    
-
-
+    align-items: flex-start;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-.secao{
+.secao {
     background-color: #e5e5e5;
     flex-direction: column;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.356);
@@ -52,10 +52,11 @@ body {
     display: flex;
     justify-content: center;
     margin: 30px 30px;
-    
+    border: 1px solid yellow;
+
 }
 
-#text{
+.text {
     background-color: transparent;
     padding: 20px 20px;
     margin: 30px 0 0 0;
@@ -65,23 +66,96 @@ body {
     border-radius: 30px;
     resize: none;
     justify-content: center;
-} 
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    line-height: 48px;
+    color: rgba(10, 56, 113, 1);
+}
+
+.text:focus {
+    border: none;
+    outline: 0;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+}
+
+.alert {
+    
+}
+
+.info-text {
+    
+    font-size: 12px;
+    font-weight: 400, normal;
+    line-height: 18px;
+    color: rgba(73, 80, 87, 1);
+
+}
+
+/* resultado */
+
+/* .output {
+    
+} */
+
+.result {
+    height: 550px;
+    border: 1px solid red;
+    background: #FFFFFF;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.356);
+    border-radius: 30px;
+    margin: 30px 30px 0 0;
+    padding: 20px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+
+}
+
+.not-found {
+    font-weight: 700, bold;
+    font-size: 24px;
+    color: rgba(52, 58, 64, 1);
+    text-align: center;
+    line-height: 28.8px;
+}
+
+.insert-message {
+    font-size: 16px;
+    font-weight: 400, normal;
+    color: rgba(73, 80, 87, 1);
+    line-height: 24px;
+    text-align: center;
+    
+}
+
 
 /* botoes */
 
 .botoes {
-    border-radius: 15px;
-    padding: 25px 50px;
-    margin: 60px;
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    padding: 24px;
+    
+
+
+
 }
 
 .botao-entrada {
     display: flex;
     justify-content: space-around;
+    margin: 30px;
+    gap: 30px;
 }
 
-#cript{
-    
+#cript {
+
     background-color: #0A3871;
     color: #fff;
 }
@@ -93,5 +167,7 @@ body {
 #copy {
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, .08);
     background-color: #fff;
+    margin: 13px auto;
+
 
 }
