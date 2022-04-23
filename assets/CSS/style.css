@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* elemento base */
+
+body {
+    background-color: #FFFF;
+    font-family: 'Inter', sans-serif; 
+    width: 100vw;
+    height: 100vh;
+    
+    
+}
+
+.cabecalho {
+   /* background-color: #000; */
+   height: 90px;
+   padding: 20px 0 0 20px;
+
+
+}
+
+
+
+.container {
+    background-color: #e5e5e5 ;
+    height: 80vh;
+    width: 85vw;
+    margin: auto;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.356);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    
+
+
+}
+
+.secao{
+    background-color: #e5e5e5;
+    flex-direction: column;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.356);
+    border-radius: 30px;
+    height: 550px;
+    width: 720px;
+    display: flex;
+    justify-content: center;
+    margin: 30px 30px;
+    
+}
+
+#text{
+    background-color: transparent;
+    padding: 20px 20px;
+    margin: 30px 0 0 0;
+    border: none;
+    width: 700px;
+    height: 400px;
+    border-radius: 30px;
+    resize: none;
+    justify-content: center;
+} 
+
+/* botoes */
+
+.botoes {
+    border-radius: 15px;
+    padding: 25px 50px;
+    margin: 60px;
+}
+
+.botao-entrada {
+    display: flex;
+    justify-content: space-around;
+}
+
+#cript{
+    
+    background-color: #0A3871;
+    color: #fff;
+}
+
+#decript {
+    background-color: #D8DFE8;
+}
+
+#copy {
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, .08);
+    background-color: #fff;
+
+}
