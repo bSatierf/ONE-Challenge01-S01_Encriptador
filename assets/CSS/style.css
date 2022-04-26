@@ -5,6 +5,30 @@
     font-family: 'Inter', sans-serif;
 }
 
+
+
+:root {
+    --body-bg: #e5e5e5;
+    --button-placeholder-bg: rgba(10, 56, 113, 1);
+    --output-bg: #FFFFFF;
+    --encrypt-button-font: rgba(255, 255, 255, 1);
+    --decrypt-button-bg: rgba(216, 223, 232, 1);
+    --notfound-bg: rgba(52, 58, 64, 1);
+    --message-alert: rgba(73, 80, 87, 1);
+    --light: #cccccc;
+    --dark: #151515;
+}
+
+.dark-mode:root {
+    --body-bg: #1B1E3B;
+    --button-placeholder-bg: #7956FF;
+    --output-bg: #111425;
+    --encrypt-button-font: #51CFDB;
+    --decrypt-button-bg: #51CFDB;
+    --notfound-bg: #B6B5BB;
+    --message-alert: #B6B5BB;
+}
+
 /* Struture */
 
 body {
@@ -13,7 +37,7 @@ body {
     width: 100vw;
     max-height: 1024px;
     height: 100vh;
-    background: #e5e5e5;
+    background: var(--body-bg);
     box-sizing: border-box;
     overflow: hidden;
     
@@ -22,7 +46,11 @@ body {
 .cabecalho {
     padding: 40px 0 10px 80px;
     width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
 
 /* Main */
 
@@ -47,7 +75,7 @@ body {
 }
 
 .textarea {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     width: 100%;
     height: 85%;
     padding: 20px 20px 20px 20px;
@@ -63,13 +91,13 @@ body {
     outline: 0;
     font-size: 32px;
     line-height: 48px;
-    /* color: rgba(10, 56, 113, 1); */
+    color: var(--button-placeholder-bg);
 }
 
 .text::placeholder {
     font-size: 32px;
     line-height: 48px;
-    color: rgba(10, 56, 113, 1);
+    color: var(--button-placeholder-bg);
 }
 
 .info {
@@ -85,26 +113,27 @@ body {
     line-height: 18px;
     text-align: left;
     text-indent: 5px;
+    color: var(--message-alert);
 }
 
 /* Section 2 */
 
 .output-section {
-    /* border: 1px solid yellow; */
+    border: 1px solid yellow;
     width: 25%;
     height: 115%;
     margin: 0 30px;
     border-radius: 34px;
     display: flex;
     flex-direction: column;
-    background: #FFFFFF;
+    background: var(--output-bg);
     box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.08);
     position: relative;
     bottom: 40px;
 }
 
 .result {
-    /* border: 1px solid pink; */
+    border: 1px solid pink;
     height: 100%;
     width: 100%;
     display: flex;
@@ -115,7 +144,7 @@ body {
 
 .img-result {
     /* border: 1px solid green; */
-    width: 90%;
+    /* width: 90%; */
     margin: 0 auto;
 }
 
@@ -126,7 +155,7 @@ body {
     font-weight: 700;
     line-height: 29px;
     text-align: center;
-    color: rgba(52, 58, 64, 1);
+    color: var(--button-placeholder-bg);
 }
 
 .insert-message-info {
@@ -136,7 +165,7 @@ body {
     font-weight: 400;
     line-height: 24px;
     text-align: center;
-    color: rgba(73, 80, 87, 1);
+    color: var(--message-alert);
 }
 
 /* buttons */
@@ -146,6 +175,8 @@ body {
     margin: 10px;
     display: flex;
     gap: 15px;
+    align-items: flex-start;
+    border: 1px solid red;
 }
 
 .buttons {
@@ -156,6 +187,68 @@ body {
     /* padding: 24px; */
 }
 
+#cript {
+    background: var(--button-placeholder-bg);
+    color: var(--message-alert);
+}
+
+#decript {
+    background: var(--decrypt-button-bg);
+    border: 1px solid var(--button-placeholder-bg);
+}
+
 #copy {
     margin: 0 auto;
+    background: var(--encrypt-button-font);
+}
+
+
+/* dark-mode test*/
+
+.toggle {
+    position: relative;
+    /* bottom: 40px; */
+
+    display: block;
+    width: 50px;
+    height: 25px;
+    border-radius: 160px;
+    background: #e5e5e5;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+            inset 0 8px 8px rgba(0, 0, 0, 0.1), 
+            inset 0 -4px 4px rgba(0, 0, 0, 0.1)
+}
+
+.toggle.dark-mode {
+    background: #223;
+    box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),
+            inset 0 2px 8px rgba(0, 0, 0, 0.1), 
+            inset 0 -4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.toggle .indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(to bottom, #eaeaea,#f9f9f9);
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 
+            inset 0 4px 4px rgba(255, 255, 255, 0.2), 
+            inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+    transition: 0.5s;
+    
+
+}
+
+.toggle.dark-mode .indicator {
+    left: 25px;
+    background: linear-gradient(to bottom, #444,#222);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1), 
+            inset 0 4px 4px rgba(0, 0, 0, 0.1), 
+            inset 0 -4px 4px rgba(255, 255, 255, 0.2);
 }

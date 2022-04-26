@@ -12,16 +12,24 @@
 </head>
 
 <body>
-    <header class="cabecalho"><img src="./assets/image/logo-alura.svg" alt="Alura"></header>
+    <header class="cabecalho">
+        <img class="alura-logo" src="./assets/image/logo-alura.svg" alt="Alura">
+
+        <div class="toggle" onclick="setMode()">
+            <i class="indicator">Light Mode</i>
+        </div>
+
+    </header>
 
     <main class="container">
 
-    
+
 
         <section class="input-section">
             <div class="textarea">
-                
-                <textarea name="" id="text" class="text" cols="30" rows="10" spellcheck="false" placeholder="Digite seu texto"></textarea>
+
+                <textarea name="" id="text" class="text" cols="30" rows="10" spellcheck="false"
+                    placeholder="Digite seu texto"></textarea>
             </div>
 
 
@@ -31,7 +39,7 @@
             </div>
 
             <div class="button-entry">
-                <button class="buttons"  id="cript">Criptografar</button>
+                <button class="buttons" id="cript">Criptografar</button>
                 <button class="buttons" id="decript">Descriptografar</button>
             </div>
 
@@ -41,11 +49,13 @@
 
             <div class="result">
 
-                <img class="img-result" src="./assets/image/image2.svg" alt="Arte de uma menina com roupa e cabelo azul, usando uma lupa e fazendo a análise de um diamante.">
+                <img class="img-result" src="./assets/image/image2.svg"
+                    alt="Arte de uma menina com roupa e cabelo azul, usando uma lupa e fazendo a análise de um diamante.">
 
                 <h3 class="not-found">Nenhuma mensagem encontrada</h3>
 
                 <p class="insert-message-info">Digite um texto que você deseja criptografar ou descriptografar.</p>
+
 
                 <button class="buttons" id="copy">Copiar</button>
 
@@ -59,6 +69,7 @@
         &copy; bSatierf - 2022
 
     </footer>
+
 
 
     <script src="./assets/JS/script.js"></script>
