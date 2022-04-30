@@ -20,9 +20,9 @@
 }
 
 .dark-mode:root {
-    --body-bg: #1B1E3B;
+    --body-bg: #111425;
     --button-placeholder-bg: #7956FF;
-    --output-bg: #111425;
+    --output-bg: #000000;
     --encrypt-button-font: #51CFDB;
     --decrypt-button-bg: #51CFDB;
     --notfound-bg: #B6B5BB;
@@ -142,6 +142,15 @@ body {
     
 }
 
+.result-text {
+    border: 1px solid pink;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .img-result {
     /* border: 1px solid green; */
     /* width: 90%; */
@@ -168,6 +177,11 @@ body {
     color: var(--message-alert);
 }
 
+
+.hide {
+    display: none;
+}
+
 /* buttons */
 
 .button-entry {
@@ -187,14 +201,14 @@ body {
     /* padding: 24px; */
 }
 
-#cript {
+#encrypt {
     background: var(--button-placeholder-bg);
     color: var(--message-alert);
 }
 
-#decript {
+#decrypt {
     background: var(--decrypt-button-bg);
-    border: 1px solid var(--button-placeholder-bg);
+    /* border: 1px solid var(--button-placeholder-bg); */
 }
 
 #copy {
