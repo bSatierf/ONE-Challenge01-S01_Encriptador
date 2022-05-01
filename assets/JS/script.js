@@ -1,28 +1,34 @@
-/* Teste darkMode */
+/* Section darkMode */
 const body = document.querySelector('body');
 const html = document.querySelector('html');
 const toggle = document.querySelector('.toggle');
-// const text = document.querySelector('.indicator');
+const themeText = document.querySelector('#theme-mode');
 
 toggle.onclick = function darkMode() {
   toggle.classList.toggle('dark-mode');
   body.classList.toggle('dark-mode');
   html.classList.toggle('dark-mode');
+  const classTheme = toggle.className;
+  if (classTheme.indexOf('dark-mode') !== -1) {
+    themeText.innerHTML = 'Dark Mode';
+  } else {
+    themeText.innerHTML = 'Light Mode';
+  }
 };
+
+/* End Section darkMode */
 
 // Script para criptografia
 
-let textArea = document.getElementById('textArea');
-let resultText = document.querySelector('.result-text');
+const textArea = document.querySelector('#text-area');
+const resultText = document.querySelector('.result-text');
+const result = document.querySelector('.result');
+const resultArea = document.querySelector('.result-area');
 const encryptButton = document.querySelector('#encrypt');
 const decryptButton = document.querySelector('#decrypt');
-let copy = document.querySelector('#copy');
+const copy = document.querySelector('#copy');
 
-
-// const teste = text.value;
-
-
-
+/* function encrypt/decrypt */
 function encrypt(letter) {
   letter = letter.replaceAll('e', 'enter');
   letter = letter.replaceAll('i', 'imes');
@@ -42,42 +48,55 @@ function decrypt(letter) {
 
   return letter;
 }
+/* End section encrypt/decrypt */
 
-let contentText = '';
+/* The showResults function is used to show the result of encryption/decryption. */
 
 function showResult() {
-  let resultText = document.querySelector('.result-text');
-  let result = document.querySelector('.result');
-  resultText.classList.toggle('hide');
-  result.classList.toggle('hide');
-};
+  const resultAreaClass = resultArea.className;
+  const textAreaValue = textArea.value;
+
+  if (resultAreaClass.indexOf('hide') !== -1 && textAreaValue.length !== 0) {
+    result.classList.toggle('hide');
+    resultArea.classList.toggle('hide');
+  }
+}
+
+/* The eraseText function is used to erase the input text, which has been encrypted/decrypted. */
+
+function eraseText() {
+  document.querySelector('#text-area').value = '';
+}
+
+/* triggers */
 
 encryptButton.addEventListener('click', () => {
-  let text = textArea.value;
-  let encryptText = encrypt(text);
-  console.log(encryptText);
+  const text = textArea.value;
+  const encryptText = encrypt(text);
   resultText.innerText = encryptText;
-  contentText = encryptText;
-  text = '';
-  showResult();
+  if (text.length >= 1) {
+    showResult();
+    eraseText();
+  } else {
+    alert('Por favor, insira um texto!');
+  }
 });
 
 decryptButton.addEventListener('click', () => {
-  let text = textArea.value;
-  let decryptText = decrypt(text);
-  console.log(decryptText);
+  const text = textArea.value;
+  const decryptText = decrypt(text);
   resultText.innerText = decryptText;
-  contentText = decryptText;
-  text = '';
-  showResult();
+  if (text.length != 0) {
+    showResult();
+    eraseText();
+  } else {
+    alert('Por favor, insira um texto!');
+  }
 });
 
-/* function moveDiv(text) {
-        let textArea = document.querySelector('#text').value;
-        let divTest = document.querySelector('.result-text');
-
-        console.log(textArea)
-
-        document.divTest.appendChild(textArea.value);
-
-} */
+copy.addEventListener('click', () => {
+  const copyText = document.querySelector('.result-text').innerText;
+  // const popup = document.querySelector('copy-alert');
+  navigator.clipboard.writeText(copyText);
+  alert('Texto Copiado!');
+});

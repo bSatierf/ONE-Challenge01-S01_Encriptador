@@ -7,16 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    
 
     <title>Decodificador de texto</title>
 </head>
 
 <body>
     <header class="cabecalho">
-        <img class="alura-logo" src="./assets/image/logo-alura.svg" alt="Alura">
+         <a href="https://www.alura.com.br/oracle-next-education" target="_blank"><img class="alura-logo" src="./assets/image/logo-alura.svg" alt="Logo da Alura"></a>
 
-        <div class="toggle" onclick="setMode()">
-            <i class="indicator">Light Mode</i>
+        <div class="theme">
+            <label for="indicator"  id="theme-mode">Light Mode</label>
+            <div class="toggle" >
+                
+                <i class="indicator"></i>
+            </div>
         </div>
 
     </header>
@@ -26,9 +32,9 @@
 
 
         <section class="input-section">
-            <div class="textarea">
+            <div class="text-area-div">
 
-                <textarea name="text" id="textArea" class="text" cols="30" rows="10" spellcheck="false"
+                <textarea name="text" id="text-area" class="text" cols="30" rows="10" spellcheck="false"
                     placeholder="Digite seu texto"></textarea>
             </div>
 
@@ -38,8 +44,8 @@
                 <span class="info-text">Apenas letras minúsculas e sem acento.</span>
             </div>
 
-            <div class="button-entry">
-                <button class="buttons" id="encrypt">Criptografar</button>
+            <div  class="button-entry">
+                <button  type="reset" class="buttons" id="encrypt">Criptografar</button>
                 <button class="buttons" id="decrypt">Descriptografar</button>
             </div>
 
@@ -57,9 +63,11 @@
                 <p class="insert-message-info">Digite um texto que você deseja criptografar ou descriptografar.</p>
 
             </div>
-            <div class="result-text hide" >
+            <div class="result-area hide" >
+                
+                <p class="result-text"></p>
 
-
+                <span id="copy-alert">Copiado!</span>
                 <button class="buttons" id="copy">Copiar</button>
 
             </div>
@@ -67,9 +75,19 @@
 
     </main>
 
-    <footer>
+    <footer class="footer">
 
-        &copy; bSatierf - 2022
+        <div class="social-network">
+
+            <a href="https://github.com/bSatierf" target="_blank"><span class="iconify-inline" data-icon="akar-icons:github-fill" data-width="48" data-height="48"></span></a>
+
+
+            <a href="https://www.linkedin.com/in/balbino-freitas-neto-1721b8235/" target="_blank"><span class="iconify-inline" data-icon="akar-icons:linkedin-box-fill" data-width="48" data-height="48"></span></a>
+        </div>
+
+        <div class="copyright">
+            &copy; bSatierf - 2022
+        </div>
 
     </footer>
 
