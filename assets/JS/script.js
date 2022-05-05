@@ -3,14 +3,21 @@ const body = document.querySelector('body');
 const html = document.querySelector('html');
 const toggle = document.querySelector('.toggle');
 const themeText = document.querySelector('#theme-mode');
+const eptBtnDarkMode = document.querySelector('#encrypt');
+const dptBtnDarkMode = document.querySelector('#decrypt');
+const copyBtnDarkMode = document.querySelector('#copy')
 
 toggle.onclick = function darkMode() {
   toggle.classList.toggle('dark-mode');
   body.classList.toggle('dark-mode');
   html.classList.toggle('dark-mode');
+  eptBtnDarkMode.classList.toggle('dark-mode');
+  dptBtnDarkMode.classList.toggle('dark-mode');
+  copyBtnDarkMode.classList.toggle('dark-mode');
   const classTheme = toggle.className;
   if (classTheme.indexOf('dark-mode') !== -1) {
     themeText.innerHTML = 'Dark Mode';
+    console.log(eptBtnDarkMode)
   } else {
     themeText.innerHTML = 'Light Mode';
   }
