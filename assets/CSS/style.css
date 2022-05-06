@@ -272,10 +272,6 @@ body {
     color: #000
 }
 
-/* .buttons:active:after {
-    background: transparent;
-} */
-
 .buttons:hover:before {
     opacity: 1;
 }
@@ -323,10 +319,6 @@ body {
 .buttons.dark-mode:active {
     color: #000
 }
-
-/* .buttons:active:after {
-    background: transparent;
-} */
 
 .buttons.dark-mode:hover:before {
     opacity: 1;
