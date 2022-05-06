@@ -5,7 +5,7 @@ const toggle = document.querySelector('.toggle');
 const themeText = document.querySelector('#theme-mode');
 const eptBtnDarkMode = document.querySelector('#encrypt');
 const dptBtnDarkMode = document.querySelector('#decrypt');
-const copyBtnDarkMode = document.querySelector('#copy')
+const copyBtnDarkMode = document.querySelector('#copy');
 
 toggle.onclick = function darkMode() {
   toggle.classList.toggle('dark-mode');
@@ -17,7 +17,6 @@ toggle.onclick = function darkMode() {
   const classTheme = toggle.className;
   if (classTheme.indexOf('dark-mode') !== -1) {
     themeText.innerHTML = 'Dark Mode';
-    console.log(eptBtnDarkMode)
   } else {
     themeText.innerHTML = 'Light Mode';
   }
@@ -25,7 +24,7 @@ toggle.onclick = function darkMode() {
 
 /* End Section darkMode */
 
-// Script para criptografia
+/* Script para criptografia */
 
 const textArea = document.querySelector('#text-area');
 const resultText = document.querySelector('.result-text');
@@ -36,24 +35,31 @@ const decryptButton = document.querySelector('#decrypt');
 const copy = document.querySelector('#copy');
 
 /* function encrypt/decrypt */
-function encrypt(letter) {
-  letter = letter.replaceAll('e', 'enter');
-  letter = letter.replaceAll('i', 'imes');
-  letter = letter.replaceAll('a', 'ai');
-  letter = letter.replaceAll('o', 'ober');
-  letter = letter.replaceAll('u', 'ufat');
 
-  return letter;
+function encrypt(encryptedText) {
+  const encryptKey = [['e', 'enter'], ['i', 'imes'], ['a', 'ai'], ['o', 'ober'], ['u', 'ufat']];
+  encryptedText = encryptedText.toLowerCase();
+
+  for (let i = 0; i < encryptKey.length; i++) {
+    if (encryptedText.includes(encryptKey[i][0])) {
+      encryptedText = encryptedText.replaceAll(encryptKey[i][0], encryptKey[i][1]);
+    }
+  }
+
+  return encryptedText;
 }
 
-function decrypt(letter) {
-  letter = letter.replaceAll('enter', 'e');
-  letter = letter.replaceAll('imes', 'i');
-  letter = letter.replaceAll('ai', 'a');
-  letter = letter.replaceAll('ober', 'o');
-  letter = letter.replaceAll('ufat', 'u');
+function decrypt(decryptedText) {
+  const encryptKey = [['enter', 'e'], ['imes', 'i'], ['ai', 'a'], ['ober', 'o'], ['ufat', 'u']];
+  decryptedText = decryptedText.toLowerCase();
 
-  return letter;
+  for (let i = 0; i < encryptKey.length; i++) {
+    if (decryptedText.includes(encryptKey[i][0])) {
+      decryptedText = decryptedText.replaceAll(encryptKey[i][0], encryptKey[i][1]);
+    }
+  }
+
+  return decryptedText;
 }
 /* End section encrypt/decrypt */
 
@@ -93,7 +99,7 @@ decryptButton.addEventListener('click', () => {
   const text = textArea.value;
   const decryptText = decrypt(text);
   resultText.innerText = decryptText;
-  if (text.length != 0) {
+  if (text.length !== 0) {
     showResult();
     eraseText();
   } else {

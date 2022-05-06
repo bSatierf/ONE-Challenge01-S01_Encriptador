@@ -251,13 +251,65 @@ body {
 }
 
 
+.buttons:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 500%;
+    z-index: -1;
+    filter: blur(8px);
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 15px;
+}
+
+.buttons:active {
+    color: #000
+}
+
+/* .buttons:active:after {
+    background: transparent;
+} */
+
+.buttons:hover:before {
+    opacity: 1;
+}
+
+.buttons:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--button-placeholder-bg);
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+}
+
+#decrypt.buttons:after {
+    background: var(--decrypt-button-bg);
+}
+
+#copy.buttons:after {
+    background: var(--decrypt-button-bg);
+}
+
+
+/* // */
+
 .buttons.dark-mode:before {
     content: '';
     background: linear-gradient(90deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
     top: -2px;
     left:-2px;
-    background-size: 400%;
+    background-size: 450%;
     z-index: -1;
     filter: blur(5px);
     width: calc(100% + 5px);
@@ -272,9 +324,9 @@ body {
     color: #000
 }
 
-.buttons:active:after {
+/* .buttons:active:after {
     background: transparent;
-}
+} */
 
 .buttons.dark-mode:hover:before {
     opacity: 1;
@@ -305,9 +357,6 @@ body {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
-
-  
-
 
 /* Footer */
 
