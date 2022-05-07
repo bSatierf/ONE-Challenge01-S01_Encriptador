@@ -32,10 +32,10 @@
 /* Struture */
 
 body {
-    max-width: 1440px;
+    max-width: 1920px;
     min-width: 375px;
     width: 100vw;
-    max-height: 1024px;
+    max-height: 1080px;
     height: 100vh;
     background: var(--body-bg);
     box-sizing: border-box;
@@ -175,6 +175,7 @@ body {
 
 .img-result {
     margin: 0 auto;
+    width: 90%;
 }
 
 .not-found {
@@ -243,6 +244,7 @@ body {
     width: 288px;
     height: 45px;
     border: 1px solid var(--button-placeholder-bg);
+    margin-bottom: 10px;
 }
 
 .buttons:active {
@@ -375,7 +377,7 @@ body {
     align-items: flex-end;
     justify-content: center;
     color: var(--button-placeholder-bg);
-    padding: 3px 0 0 0;
+    padding: 10px 0 0 0;
 }
 
 /* dark-mode */
