@@ -378,7 +378,7 @@ body {
     align-items: flex-end;
     justify-content: center;
     color: var(--button-placeholder-bg);
-    padding: 10px 0 0 0;
+    padding: 5px 0 0 0;
 }
 
 /* dark-mode */
